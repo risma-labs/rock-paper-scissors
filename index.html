@@ -1,5 +1,7 @@
 <script>
     const CHOICES = ['rock', 'paper', 'scissors']
+    let playerScore = 0;
+    let computerScore = 0;
 
     function computerPlay() {
         return CHOICES[rand(CHOICES.length)];
@@ -33,8 +35,8 @@
     }
 
     function game() {
-        let playerScore = 0;
-        let computerScore = 0;
+        playerScore = 0;
+        computerScore = 0;
         console.log(playRound(getPlayerInput(), computerPlay()));
         console.log(playRound(getPlayerInput(), computerPlay()));
         console.log(playRound(getPlayerInput(), computerPlay()));
