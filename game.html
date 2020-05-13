@@ -1,0 +1,54 @@
+<script>
+    const CHOICES = ['rock', 'paper', 'scissors']
+
+    function computerPlay() {
+        return CHOICES[rand(CHOICES.length)];
+    }
+
+    function rand(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    function capitalize(str) {
+        return str[0].toUpperCase() + str.slice(1).toLowerCase();
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        if (playerSelection === 'rock' && computerSelection === 'paper' ||
+            playerSelection === 'paper' && computerSelection === 'scissors' ||
+            playerSelection === 'scissors' && computerSelection === 'rock') {
+            computerScore++;
+            return `You lose! ${capitalize(computerSelection)} beats ${capitalize(playerSelection)}.`;
+        } else if (playerSelection === computerSelection) {
+            return `Round is a tie. ${capitalize(playerSelection)} vs ${capitalize(computerSelection)}.`;
+        } else {
+            playerScore++;
+            return `You win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}.`;
+        };
+    };
+
+    function getPlayerInput() {
+        let playerInput = prompt("Rock, paper or scissors?")
+        return playerInput.toLowerCase();
+    }
+
+    function game() {
+        let playerScore = 0;
+        let computerScore = 0;
+        console.log(playRound(getPlayerInput(), computerPlay()));
+        console.log(playRound(getPlayerInput(), computerPlay()));
+        console.log(playRound(getPlayerInput(), computerPlay()));
+        console.log(playRound(getPlayerInput(), computerPlay()));
+        console.log(playRound(getPlayerInput(), computerPlay()));
+        if (playerScore > computerScore) {
+            console.log(`You win the game! ${playerScore} - ${computerScore}.`);
+        } else if (playerScore === computerScore) {
+            console.log(`The game is a draw! ${playerScore} - ${computerScore}.`);
+        } else {
+            console.log(`You lose the game. ${playerScore} - ${computerScore}.`);
+        }
+    }
+
+    game();
+
+</script>
