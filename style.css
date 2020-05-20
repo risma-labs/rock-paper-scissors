@@ -1,0 +1,108 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+main {
+  height: 1vh;
+}
+
+header {
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+}
+
+#game {
+  width: 600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-content: center;
+  gap: 1em;
+  height: 200px;             
+  background: #fdfdfd;
+  padding: 2em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 15%;
+}
+
+#play {
+  background-color: #3a3a3a;
+  border-radius: 10px;
+  overflow: auto;
+  padding: 1em 2em;
+  color: white;
+  font-family: monospace;
+  font-size: 10pt;
+  line-height: 1.2em;
+  text-align: justify;
+  scrollbar-color: hsla(210, 90%, 45%, 1) transparent;
+}
+
+#controls {
+  display: grid;
+  align-content: space-between;
+  text-align: center;
+  justify-content: center;
+}
+
+#game-button-wrapper {
+  display: grid;
+}
+
+#menu-button-wrapper {
+  display: grid;
+}
+
+button {
+  border: none;
+  border-radius: 0.5em;
+  margin-right: 1em;
+  height: 40px;
+  font-size: 14px;
+  background: none;
+  background: hsla(210, 90%, 45%, 1);
+  color: white;
+  border: 0.02em solid #ccc;
+  width: 100%;
+}
+
+.fa {
+  font-size: 16pt;
+  margin-right: 5px;
+}
+
+#results {
+  text-align: center;
+  align-content: center;
+  font-size: 42pt;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.score {
+  margin: 0;
+  padding: 0;
+}
+
+#player-score {
+  color: darkgreen;
+}
+
+#computer-score {
+  color: darkred;
+}
+
+#line {
+  height: 1px;
+  background: #ccc;
+}
+
+#reset-button {
+  width: 100%;
+}

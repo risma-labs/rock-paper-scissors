@@ -1,56 +1,36 @@
-<script>
-    const CHOICES = ['rock', 'paper', 'scissors']
-    let playerScore = 0;
-    let computerScore = 0;
-
-    function computerPlay() {
-        return CHOICES[rand(CHOICES.length)];
-    }
-
-    function rand(max) {
-        return Math.floor(Math.random() * max);
-    }
-
-    function capitalize(str) {
-        return str[0].toUpperCase() + str.slice(1).toLowerCase();
-    }
-
-    function playRound(playerSelection, computerSelection) {
-        if (playerSelection === 'rock' && computerSelection === 'paper' ||
-            playerSelection === 'paper' && computerSelection === 'scissors' ||
-            playerSelection === 'scissors' && computerSelection === 'rock') {
-            computerScore++;
-            return `You lose! ${capitalize(computerSelection)} beats ${capitalize(playerSelection)}.`;
-        } else if (playerSelection === computerSelection) {
-            return `Round is a tie. ${capitalize(playerSelection)} vs ${capitalize(computerSelection)}.`;
-        } else {
-            playerScore++;
-            return `You win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}.`;
-        };
-    };
-
-    function getPlayerInput() {
-        let playerInput = prompt("Rock, paper or scissors?")
-        return playerInput.toLowerCase();
-    }
-
-    function game() {
-        playerScore = 0;
-        computerScore = 0;
-        console.log(playRound(getPlayerInput(), computerPlay()));
-        console.log(playRound(getPlayerInput(), computerPlay()));
-        console.log(playRound(getPlayerInput(), computerPlay()));
-        console.log(playRound(getPlayerInput(), computerPlay()));
-        console.log(playRound(getPlayerInput(), computerPlay()));
-        if (playerScore > computerScore) {
-            console.log(`You win the game! ${playerScore} - ${computerScore}.`);
-        } else if (playerScore === computerScore) {
-            console.log(`The game is a draw! ${playerScore} - ${computerScore}.`);
-        } else {
-            console.log(`You lose the game. ${playerScore} - ${computerScore}.`);
-        }
-    }
-
-    game();
-
-</script>
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>ROCK PAPER SCISSORS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <div id="game">
+                <section id="controls">
+                    <div id="game-button-wrapper">
+                        <button id="rock-button"><i class="fa fa-hand-rock-o" aria-hidden="true"></i>
+                            Rock</button>
+                        <button id="paper-button"><i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+                            Paper</button>
+                        <button id="scissors-button"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
+                            Scissors</button>
+                    </div>
+                    <p id="player-selection"><i class="fa fa-hand-rock-o"></i></p>
+                    <div id="menu-button-wrapper">
+                        <button id="reset-button" onclick="">Reset</button>
+                    </div>
+                </section>
+                <section id="play"></section>
+                <section id="results">
+                    <p class="score" id="player-score"></p>
+                    <div id="line"></div>
+                    <p class="score" id="computer-score"></p>
+                </section>
+            </div>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>
